@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
+console.log(path.join(__dirname, '../client/dist'));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/api', router);
 
