@@ -1,0 +1,49 @@
+/* .actionBar {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.actionBarLeft {
+  display: inline-block;
+}
+
+.actionBarRight {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "Roboto","Arial",sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #e71836;
+  padding-top: .5em;
+  padding-right: 1em;
+  padding-bottom: .5em;
+  padding-left: 1em;
+  border-radius: 0;
+  border-top-width: 0;
+  border-top-style: none;
+  border-top-color: #000;
+  border-right-width: 0;
+  border-right-style: none;
+  border-right-color: #000;
+  border-bottom-width: 0;
+  border-bottom-style: none;
+  border-bottom-color: #000;
+  border-left-width: 0;
+  border-left-style: none;
+  border-left-color: #000;
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ratingsSnapshot {
+  display: inline-block;
+}
+
+.ratingsAverage {
+  display: inline-block;
+}

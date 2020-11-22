@@ -40,9 +40,9 @@ let seedFunc = () => {
       body: faker.lorem.paragraph(),
       photos: randomImages,
       recommended: faker.random.boolean(),
-      overallRating: Math.floor(Math.random() * (5 - 1) + 1),
-      qualityRating: Math.floor(Math.random() * (5 - 1) + 1),
-      valueRating:  Math.floor(Math.random() * (5 - 1) + 1),
+      overallRating: Math.floor(Math.random() * (5 - 1 + 1) + 1),
+      qualityRating: Math.floor(Math.random() * (5 - 1 + 1) + 1),
+      valueRating:  Math.floor(Math.random() * (5 - 1 + 1) + 1),
       timeCreated: faker.date.past(),
       votes: Math.floor(Math.random() * 8),
       helpful: faker.random.boolean()
