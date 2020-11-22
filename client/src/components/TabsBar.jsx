@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import _ from ''
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 const Bar = styled.div`
@@ -38,7 +39,9 @@ const TabLabel = styled.h2`
 function TabsBar(props) {
   let tabs = [['details', 'Details'], ['sizeAndFit', 'Size & Fit'], ['reviews', 'Reviews'], ['qa', 'Q&A']];
 
-  let rating = props.reviews.map(review => {
+  let rating = 0;
+
+  props.reviews.map(review => {
     rating += props.reviews.overallRating;
   });
 
