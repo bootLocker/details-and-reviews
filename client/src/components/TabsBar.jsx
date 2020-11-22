@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 const Bar = styled.div`
     margin: auto;
@@ -35,40 +36,34 @@ const TabLabel = styled.h2`
 `;
 
 function TabsBar(props) {
+  let tabs = [['details', 'Details'], ['sizeAndFit', 'Size & Fit'], ['reviews', 'Reviews'], ['qa', 'Q&A']];
+
+  let rating = props.reviews.map(review => {
+    rating += props.reviews.overallRating;
+  });
+
+  console.log(rating);
+
+  let stars = [];
+
+  for (let i = 0; i < 5; i++) {
+
+  }
+
+
+  let tabComponents = tabs.map(tab => {
+    return (
+      <TabButton
+        value={tab[0]}
+        isSelected={props.selectedTab}
+        onClick={props.changeView}>
+        {tab[0] === 'reviews' ? <TabLabel> {tab[1]} </TabLabel> : <TabLabel> {tab[1]} </TabLabel>}
+      </TabButton>
+    )
+  })
   return (
     <Bar>
-      <TabButton
-        value='details'
-        isSelected={props.selectedTab}
-        onClick={props.changeView}>
-        <TabLabel>
-          Details
-        </TabLabel>
-      </TabButton>
-      <TabButton
-        value='sizeAndFit'
-        isSelected={props.selectedTab}
-        onClick={props.changeView}>
-        <TabLabel>
-          Size & Fit
-        </TabLabel>
-      </TabButton>
-      <TabButton
-        value='reviews'
-        isSelected={props.selectedTab}
-        onClick={props.changeView}>
-        <TabLabel>
-          Reviews
-        </TabLabel>
-      </TabButton>
-      <TabButton
-        value='qa'
-        isSelected={props.selectedTab}
-        onClick={props.changeView}>
-        <TabLabel>
-          Q&A
-        </TabLabel>
-      </TabButton>
+      {tabComponents}
     </Bar>
     )
 };

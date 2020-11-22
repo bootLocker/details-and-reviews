@@ -78,7 +78,7 @@ class App extends React.Component {
           overallRatings: overallRatings,
           qualityRatings: qualityRatings,
           valueRatings: valueRatings
-        }, () => console.log(this.state));
+        });
       })
       .catch(err => {
         console.error(err);
@@ -93,7 +93,10 @@ class App extends React.Component {
     } else {
       return (
         <Container>
-          <TabsBar selectedTab={this.state.selectedTab} changeView={this.changeView} reviews={this.state.reviews}/>
+          <TabsBar
+            selectedTab={this.state.selectedTab}
+            changeView={this.changeView}
+            reviews={this.state.reviews} />
           <PanelContainer>
             {panel}
           </PanelContainer>
