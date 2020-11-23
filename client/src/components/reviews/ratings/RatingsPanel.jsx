@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SnapshotPanel from './snapshot/SnapshotPanel.jsx';
+import SnapshotPanel from './SnapshotPanel.jsx';
 import AverageRatingPanel from './AverageRatingPanel.jsx';
 
 const RatingsContainer = styled.div`
@@ -14,7 +14,11 @@ let RatingsPanel = (props) => {
   return (
     <RatingsContainer>
       <SnapshotPanel overallRatings={props.overallRatings} numberOfReviews={props.numberOfReviews} />
-      <AverageRatingPanel />
+      <AverageRatingPanel
+        overallRatings={props.overallRatings}
+        qualityRatings={props.qualityRatings}
+        valueRatings={props.qualityRatings}
+        numberOfReviews={props.numberOfReviews}/>
     </RatingsContainer>
   );
 };

@@ -16,7 +16,7 @@ const TabButton = styled.button`
   padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  border-bottom : ${props => props.isSelected === props.value? 'solid red' : 'none' };
+  border-bottom : ${props => props.isSelected === props.value ? 'solid red' : 'none' };
 
   &:hover {
     border-bottom: solid red;
@@ -44,7 +44,7 @@ let TabsBar = (props) => {
         value={tab[0]}
         isSelected={props.selectedTab}
         onClick={props.changeView}>
-        {tab[0] === 'reviews' ? <TabLabel> {tab[1]} <Stars reviews={props.reviews} /> ({props.reviews.length}) </TabLabel> : <TabLabel> {tab[1]} </TabLabel>}
+        {tab[0] === 'reviews' ? <TabLabel> {tab[1]} <Stars reviews={props.reviews} color={'#e71836'}/> ({props.reviews.length}) </TabLabel> : <TabLabel> {tab[1]} </TabLabel>}
       </TabButton>
     );
   });

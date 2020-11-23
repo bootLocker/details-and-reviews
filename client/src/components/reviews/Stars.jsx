@@ -18,17 +18,17 @@ let Stars = (props) => {
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
       stars.push(
-        <IconContext.Provider value={{ size: '1rem', color: '#e71836', style: { verticalAlign: 'middle' }}}>
+        <IconContext.Provider value={{ size: '1rem', color: props.color, style: { verticalAlign: 'middle' }}}>
           <BsStarFill />
         </IconContext.Provider>);
     } else if ( i > rating && i < (rating + 1)) {
       stars.push(
-        <IconContext.Provider value={{ size: '1rem', color: '#e71836', style: { verticalAlign: 'middle' }}}>
+        <IconContext.Provider value={{ size: '1rem', color: props.color, style: { verticalAlign: 'middle' }}}>
           <BsStarHalf />
         </IconContext.Provider>);
     } else if (i > rating && i > (rating + 1)) {
       stars.push(
-        <IconContext.Provider value={{ size: '1rem', color: '#e71836', style: { verticalAlign: 'middle' }}}>
+        <IconContext.Provider value={{ size: '1rem', color: props.color, style: { verticalAlign: 'middle' }}}>
           <BsStar />
         </IconContext.Provider>);
     }

@@ -37,7 +37,7 @@ let SnapshotPanel = (props) => {
     let rting = {
       label: rating,
       number: props.overallRatings[rating],
-      width: (((props.overallRatings[rating]/props.numberOfReviews)*255).toString() + 'px')
+      width: (((props.overallRatings[rating] / props.numberOfReviews) * 255).toString() + 'px')
     };
 
     ratings.push(rting);
