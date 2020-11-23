@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import _ from 'lodash';
-import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
+import Stars from './reviews/Stars.jsx';
 
 const Bar = styled.div`
     margin: auto;
@@ -39,28 +38,13 @@ const TabLabel = styled.h2`
 let TabsBar = (props) => {
   let tabs = [['details', 'Details'], ['sizeAndFit', 'Size & Fit'], ['reviews', 'Reviews'], ['qa', 'Q&A']];
 
-  let rating = 0;
-
-  props.reviews.map(review => {
-    rating += props.reviews.overallRating;
-  });
-
-  console.log(rating);
-
-  let stars = [];
-
-  for (let i = 0; i < 5; i++) {
-
-  }
-
-
   let tabComponents = tabs.map(tab => {
     return (
       <TabButton
         value={tab[0]}
         isSelected={props.selectedTab}
         onClick={props.changeView}>
-        {tab[0] === 'reviews' ? <TabLabel> {tab[1]} </TabLabel> : <TabLabel> {tab[1]} </TabLabel>}
+        {tab[0] === 'reviews' ? <TabLabel> {tab[1]} <Stars reviews={props.reviews} /> ({props.reviews.length}) </TabLabel> : <TabLabel> {tab[1]} </TabLabel>}
       </TabButton>
     );
   });

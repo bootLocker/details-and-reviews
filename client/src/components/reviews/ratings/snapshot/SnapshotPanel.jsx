@@ -33,7 +33,6 @@ const Snapshot = styled.div`
 let SnapshotPanel = (props) => {
   let ratings = [];
 
-
   for (let rating in props.overallRatings) {
     let rting = {
       label: rating,
