@@ -30,7 +30,7 @@ const Snapshot = styled.div`
   padding: 0;
 `;
 
-function SnapshotPanel(props) {
+let SnapshotPanel = (props) => {
   let ratings = [];
 
 
@@ -39,7 +39,7 @@ function SnapshotPanel(props) {
       label: rating,
       number: props.overallRatings[rating],
       width: (((props.overallRatings[rating]/props.numberOfReviews)*255).toString() + 'px')
-    }
+    };
 
     ratings.push(rting);
   }
@@ -47,8 +47,8 @@ function SnapshotPanel(props) {
   ratings.sort((a, b) => a.label > b.label ? -1 : 1);
 
   let mappedRatingComponents = ratings.map(rating => {
-    return <Rating rating={rating} />
-  })
+    return <Rating rating={rating} />;
+  });
 
   return (
     <div>
@@ -58,7 +58,7 @@ function SnapshotPanel(props) {
         {mappedRatingComponents}
       </Snapshot>
     </div>
-  )
-}
+  );
+};
 
 export default SnapshotPanel;

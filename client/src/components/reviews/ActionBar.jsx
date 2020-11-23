@@ -34,13 +34,13 @@ const WriteReviewButton = styled.button`
 `;
 
 
-function Heading() {
+let Heading = () => {
   return (
     <HeaderContainer>
       <Header>Reviews</Header>
       <WriteReviewButton>WRITE A REVIEW</WriteReviewButton>
     </HeaderContainer>
-  )
-}
+  );
+};
 
 export default Heading;

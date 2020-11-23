@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import _ from ''
+import _ from 'lodash';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 const Bar = styled.div`
@@ -36,7 +36,7 @@ const TabLabel = styled.h2`
   padding: 0;
 `;
 
-function TabsBar(props) {
+let TabsBar = (props) => {
   let tabs = [['details', 'Details'], ['sizeAndFit', 'Size & Fit'], ['reviews', 'Reviews'], ['qa', 'Q&A']];
 
   let rating = 0;
@@ -62,13 +62,13 @@ function TabsBar(props) {
         onClick={props.changeView}>
         {tab[0] === 'reviews' ? <TabLabel> {tab[1]} </TabLabel> : <TabLabel> {tab[1]} </TabLabel>}
       </TabButton>
-    )
-  })
+    );
+  });
   return (
     <Bar>
       {tabComponents}
     </Bar>
-    )
+  );
 };
 
 export default TabsBar;

@@ -29,15 +29,15 @@ ${props => props.emphasized && css `
 `}
 `;
 
-function RatingBar(props) {
+let RatingBar = (props) => {
   return (
     <Rating>
-          <RatingLabel>{props.rating.label}</RatingLabel>
-          <RiStarFill/>
-          <HistogramBar><HistogramBar emphasized width={props.rating.width} /> </HistogramBar>
-          <RatingLabel>{props.rating.number}</RatingLabel>
-        </Rating>
-  )
-}
+      <RatingLabel>{props.rating.label}</RatingLabel>
+      <RiStarFill/>
+      <HistogramBar><HistogramBar emphasized width={props.rating.width} /> </HistogramBar>
+      <RatingLabel>{props.rating.number}</RatingLabel>
+    </Rating>
+  );
+};
 
-export default RatingBar
+export default RatingBar;

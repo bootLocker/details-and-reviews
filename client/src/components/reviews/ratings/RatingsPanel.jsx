@@ -10,13 +10,13 @@ const RatingsContainer = styled.div`
   margin-right: 10px;
 `;
 
-function RatingsPanel(props) {
+let RatingsPanel = (props) => {
   return (
     <RatingsContainer>
       <SnapshotPanel overallRatings={props.overallRatings} numberOfReviews={props.numberOfReviews} />
       <AverageRatingPanel />
     </RatingsContainer>
-  )
-}
+  );
+};
 
 export default RatingsPanel;

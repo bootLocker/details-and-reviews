@@ -30,7 +30,7 @@ const UList = styled.ul`
   line-height: 1.5;
 `;
 
-function DetailsPanel() {
+let DetailsPanel = () => {
   return (
     <DescriptionContainer>
       <div>Product #: 24300657</div>
@@ -50,7 +50,7 @@ function DetailsPanel() {
         <li>Non-marking rubber cupsole supplies traction and durability.</li>
       </UList>
     </DescriptionContainer>
-  )
-}
+  );
+};
 
 export default DetailsPanel;

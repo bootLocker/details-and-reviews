@@ -10,10 +10,10 @@ const AverageRating = styled.div`
   margin-right: 10px;
 `;
 
-function AverageRatingPanel() {
+let AverageRatingPanel = () => {
   return (
     <div>Average</div>
-  )
-}
+  );
+};
 
 export default AverageRatingPanel;

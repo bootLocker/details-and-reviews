@@ -13,23 +13,23 @@ let controller = {
 
   post: (req, res) => {
     Reviews.create(req.body)
-    .then(() => {
-      res.status(200).send('Entry posted');
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
+      .then(() => {
+        res.status(200).send('Entry posted');
+      })
+      .catch((err) => {
+        res.status(400).send(err);
+      });
   },
 
   delete: (req, res) => {
     Reviews.deleteMany({})
-    .then(() => {
-      res.status(200).send('Deleted all entries');
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
+      .then(() => {
+        res.status(200).send('Deleted all entries');
+      })
+      .catch((err) => {
+        res.status(400).send(err);
+      });
   },
-}
+};
 
 module.exports = controller;

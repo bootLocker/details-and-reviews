@@ -11,18 +11,18 @@ class ReviewsPanel extends React.Component {
   render() {
     return (
       <div class='constrained'>
-      <Heading />
-      <RatingsPanel
-        numberOfReviews={this.props.reviews.length}
-        overallRatings={this.props.overallRatings}
-        qualityRatings={this.props.qualityRatings}
-        valueRatings={this.props.valueRatings}/>
-      <div class='controlBar'>Control Bar</div>
-      <div>
-        <Reviews reviews={this.props.reviews}/>
+        <Heading />
+        <RatingsPanel
+          numberOfReviews={this.props.reviews.length}
+          overallRatings={this.props.overallRatings}
+          qualityRatings={this.props.qualityRatings}
+          valueRatings={this.props.valueRatings}/>
+        <div class='controlBar'>Control Bar</div>
+        <div>
+          <Reviews reviews={this.props.reviews}/>
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
 

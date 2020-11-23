@@ -38,7 +38,7 @@ class App extends React.Component {
     this.setState({
       view: e.currentTarget.value,
       selectedTab: e.currentTarget.value
-    })
+    });
   }
 
   renderPanel() {
@@ -67,9 +67,9 @@ class App extends React.Component {
         let valueRatings = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
 
         for (let review of data.data) {
-          overallRatings.[review.overallRating]++;
-          qualityRatings.[review.qualityRating]++;
-          valueRatings.[review.valueRating]++;
+          overallRatings[review.overallRating]++;
+          qualityRatings[review.qualityRating]++;
+          valueRatings[review.valueRating]++;
         }
 
         this.setState({
@@ -101,7 +101,7 @@ class App extends React.Component {
             {panel}
           </PanelContainer>
         </Container>
-      )
+      );
     }
   }
 }

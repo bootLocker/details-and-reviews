@@ -6,4 +6,4 @@ router.route('/')
   .post(controller.post)
   .delete(controller.delete);
 
-  module.exports = router;
+module.exports = router;
