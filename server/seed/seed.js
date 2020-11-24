@@ -17,7 +17,7 @@ let seedFunc = () => {
 
   let seedObjects = [];
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1017; i++) {
     let randomAgeRangeIndex = Math.floor(Math.random() * ageRangeOptions.length);
 
     let randomImages = [];
@@ -25,6 +25,19 @@ let seedFunc = () => {
     let randomNumberOfImages = Math.floor(Math.random() * 3);
     for (let j = 0; j < randomNumberOfImages; j++) {
       randomImages.push(faker.image.imageUrl());
+    }
+
+    let pros = [];
+
+    let randomNumberOfPros = Math.floor(Math.random() * 5);
+    for (let j = 0; j < randomNumberOfPros; j++) {
+      pros.push(faker.lorem.word());
+    }
+
+    let cons = [];
+    let randomNumberOfCons = Math.floor(Math.random() * 3);
+    for (let j = 0; j < randomNumberOfCons; j++) {
+      cons.push(faker.lorem.word());
     }
 
     let randomShoeIndex = Math.floor(Math.random() * shoeNames.length);
@@ -39,6 +52,8 @@ let seedFunc = () => {
       title: faker.lorem.words(),
       body: faker.lorem.paragraph(),
       photos: randomImages,
+      pros: pros,
+      cons: cons,
       recommended: faker.random.boolean(),
       overallRating: Math.floor(Math.random() * (5 - 1 + 1) + 1),
       qualityRating: Math.floor(Math.random() * (5 - 1 + 1) + 1),

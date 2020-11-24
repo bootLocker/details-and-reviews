@@ -8,14 +8,14 @@ import SizeFit from './size/SizeFit.jsx';
 import QA from './q_a/QA.jsx';
 
 const Container = styled.div`
-    width: 87%;
-    margin: auto;
-    border: 1px solid #dddddd;
-    border-width: thin;
+  width: 87%;
+  margin: auto;
+  border: 1px solid #dddddd;
+  border-width: thin;
 `;
 
 const PanelContainer = styled.div`
-    padding: 32px;
+  padding: 32px;
 `;
 
 class App extends React.Component {

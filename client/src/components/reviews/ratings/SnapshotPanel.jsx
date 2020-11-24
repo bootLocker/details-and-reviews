@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Rating from './Rating.jsx';
+import SnapshotRow from './SnapshotRow.jsx';
+
+const Panel = styled.div`
+  display: inline-block;
+  width: 50%;
+  float:left;
+`;
 
 const Title = styled.h3`
   font-size: 16px;
@@ -45,18 +51,18 @@ let SnapshotPanel = (props) => {
 
   ratings.sort((a, b) => a.label > b.label ? -1 : 1);
 
-  let mappedRatingComponents = ratings.map(rating => {
-    return <Rating rating={rating} />;
+  let mappedRows = ratings.map(rating => {
+    return <SnapshotRow rating={rating} />;
   });
 
   return (
-    <div>
+    <Panel>
       <Title>Rating Snapshot</Title>
       <Description>Select a row below to filter reviews.</Description>
       <Snapshot>
-        {mappedRatingComponents}
+        {mappedRows}
       </Snapshot>
-    </div>
+    </Panel>
   );
 };
 

@@ -10,6 +10,8 @@ let reviewsSchema = new mongoose.Schema({
   title: String,
   body: String,
   photos: [{type: String}],
+  pros: [{type: String}],
+  cons: [{type: String}],
   recommended: Boolean,
   overallRating: Number,
   qualityRating: Number,

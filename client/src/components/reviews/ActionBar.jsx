@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -32,7 +31,6 @@ const WriteReviewButton = styled.button`
   padding-left: 1rem;
   border: none;
 `;
-
 
 let Heading = () => {
   return (
