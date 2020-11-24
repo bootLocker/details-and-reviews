@@ -44,7 +44,7 @@ const StyledOverlay = styled.div`
   z-index: 1;
 `;
 
-function AnswerModal(props) {
+const AnswerModal = (props) => {
   const { show, currentQuestion, handleModalCloseClick } = props;
   if (!show) {
     return null;
@@ -76,6 +76,6 @@ function AnswerModal(props) {
       <StyledOverlay />
     </>
   );
-}
+};
 
 export default AnswerModal;

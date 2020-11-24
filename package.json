@@ -11,9 +11,7 @@
   "scripts": {
     "start": "nodemon -w ./server/index.js",
     "dev": "webpack -w",
-    "seed1": "node ./server/seed/seed.js",
-    "seed2": "node server/database/seed.js",
-    "seed": "npm run seed1 && npm run seed2"
+    "seed": "node ./server/seed/seed.js"
   },
   "dependencies": {
     "axios": "^0.21.0",

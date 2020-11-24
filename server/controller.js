@@ -1,5 +1,5 @@
 let Reviews = require('./db/Reviews.js');
-const db2 = require('./database/index.js');
+let db = require('./db/');
 
 let controller = {
   get: (req, res) => {
@@ -33,7 +33,7 @@ let controller = {
   },
 
   getQuestions: (req, res) => {
-    db2.Container.findOne({ name: req.params.name })
+    db.Container.findOne({ name: req.params.name })
       .then((result) => {
         res.status(200).json(result);
       })

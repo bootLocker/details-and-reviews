@@ -3,7 +3,6 @@ let bodyParser = require('body-parser');
 let morgan = require('morgan');
 let cors = require('cors');
 let path = require('path');
-const db2 = require('./database/index.js');
 let db = require('./db');
 let router = require('./router.js');
 
