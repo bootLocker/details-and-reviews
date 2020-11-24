@@ -32,7 +32,6 @@ const WriteReviewButton = styled.button`
   border: none;
 `;
 
-
 let Heading = () => {
   return (
     <HeaderContainer>
