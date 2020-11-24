@@ -1,4 +1,5 @@
 import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 import Heading from './ActionBar.jsx';
 import RatingsPanel from './ratings/RatingsPanel.jsx';
 import ControlBar from './ControlBar.jsx';
@@ -17,6 +18,7 @@ class ReviewsPanel extends React.Component {
     };
 
     this.changePage = this.changePage.bind(this);
+    this.pageChangeRef = React.createRef();
   }
 
   changePage(e) {
@@ -27,7 +29,7 @@ class ReviewsPanel extends React.Component {
           currentReviews: currentReviews,
           firstReviewIndex: this.state.firstReviewIndex - 8,
           lastReviewIndex: this.state.lastReviewIndex - 8,
-        });
+        }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
       }
     } else {
       if (this.state.firstReviewIndex < this.state.reviews.length - 8) {
@@ -36,7 +38,7 @@ class ReviewsPanel extends React.Component {
           currentReviews: currentReviews,
           firstReviewIndex: this.state.firstReviewIndex + 8,
           lastReviewIndex: this.state.lastReviewIndex + 8,
-        });
+        }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
       }
     }
   }
@@ -62,6 +64,7 @@ class ReviewsPanel extends React.Component {
           firstReviewIndex={this.state.firstReviewIndex}
           lastReviewIndex={this.state.lastReviewIndex}
           totalCount={this.state.reviews.length}/>
+        <a ref={this.pageChangeRef} />
         <div>
           <Reviews currentReviews={this.state.currentReviews}/>
         </div>

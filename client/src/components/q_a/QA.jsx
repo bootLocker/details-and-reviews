@@ -119,7 +119,7 @@ class QA extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('api/products/adidas_don_issue_2')
+    axios.get('api/questions/adidas_don_issue_2')
       .then((results) => {
         this.setState({
           questions: results.data.questions,
