@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
 import Answer from './Answer.jsx';

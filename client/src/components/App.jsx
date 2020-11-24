@@ -75,7 +75,7 @@ class App extends React.Component {
         }
 
         this.setState({
-          view: 'reviews',
+          view: 'details',
           reviews: data.data,
           overallRatings: overallRatings,
           qualityRatings: qualityRatings,

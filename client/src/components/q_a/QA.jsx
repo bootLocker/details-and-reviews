@@ -7,6 +7,9 @@ import RequestInfo from './RequestInfo.jsx';
 import AnswerModal from './AnswerModal.jsx';
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
 
   #info-button{
     background: none!important;
@@ -110,10 +113,13 @@ class QA extends React.Component {
     this.handleCloseRequestClick = this.handleCloseRequestClick.bind(this);
     this.handleModalCloseClick = this.handleModalCloseClick.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.reqRef = React.createRef();
+    this.questionRef = React.createRef();
+    this.answerRef = React.createRef();
   }
 
   componentDidMount() {
-    axios.get('api/questions/adidas_don_issue_2')
+    axios.get('api/products/adidas_don_issue_2')
       .then((results) => {
         this.setState({
           questions: results.data.questions,
@@ -127,17 +133,17 @@ class QA extends React.Component {
   handleLeftClick() {
     this.setState((prevState) => (
       { currentPage: prevState.currentPage - 1 }
-    ));
+    ), () => this.questionRef.current.scrollIntoView());
   }
 
   handleRightClick() {
     this.setState((prevState) => (
       { currentPage: prevState.currentPage + 1 }
-    ));
+    ), () => this.questionRef.current.scrollIntoView());
   }
 
   handleRequestClick() {
-    this.setState({ requestInfo: true });
+    this.setState({ requestInfo: true }, () => this.reqRef.current.scrollIntoView());
   }
 
   handleCloseRequestClick() {
@@ -151,7 +157,8 @@ class QA extends React.Component {
   showModal(id) {
     const { questions } = this.state;
     const filteredQuestion = questions.filter((question) => question._id === id)[0];
-    this.setState({ modalOpen: true, currentQuestion: filteredQuestion });
+    this.setState({ modalOpen: true, currentQuestion: filteredQuestion },
+      () => this.answerRef.current.scrollIntoView());
   }
 
   render() {
@@ -172,6 +179,7 @@ class QA extends React.Component {
           {questions.length === 0 ? null : (
             <button type="button" onClick={this.handleRequestClick}>Request Info</button>)}
         </StyledHeader>
+        <div ref={this.questionRef} />
         {questions.length === 0 ? <button type="button" id="info-button" onClick={this.handleRequestClick}>Be the first to request info</button> : (
           <StyledQuestionBar>
             <span id="numberOfQuestions">
@@ -183,11 +191,14 @@ class QA extends React.Component {
             </span>
           </StyledQuestionBar>
         )}
-        <AnswerModal
-          show={modalOpen}
-          currentQuestion={currentQuestion}
-          handleModalCloseClick={this.handleModalCloseClick}
-        />
+        <>
+          <div ref={this.answerRef} />
+          <AnswerModal
+            show={modalOpen}
+            currentQuestion={currentQuestion}
+            handleModalCloseClick={this.handleModalCloseClick}
+          />
+        </>
         {currentQuestions.map((question) => (
           <Questions
             key={question._id}
@@ -220,10 +231,12 @@ class QA extends React.Component {
           </StyledQuestionBar>
         ) : null}
         {requestInfo ? (
-          <RequestInfo
-            handleCloseRequestClick={this.handleCloseRequestClick}
-            questions={questions}
-          />
+          <>
+            <RequestInfo
+              handleCloseRequestClick={this.handleCloseRequestClick}
+            />
+            <div ref={this.reqRef} />
+          </>
         ) : null}
       </>
     );
