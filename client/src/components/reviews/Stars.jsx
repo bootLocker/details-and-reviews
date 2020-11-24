@@ -11,7 +11,7 @@ let Stars = (props) => {
     rating += review.overallRating;
   });
 
-  rating = rating / 100;
+  rating = rating / props.reviews.length;
 
   let stars = [];
 

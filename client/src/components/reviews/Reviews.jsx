@@ -1,19 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+import Review from './Review.jsx';
+
+const ReviewsContainer = styled.div`
+  margin: 0;
+  padding: 0;
+`;
 
 let Reviews = (props) => {
-  let reviews = props.reviews.map((review) => {
+  let reviews = props.currentReviews.map((review) => {
     return (
-      <li>
-        <div>{review.title}</div>
-        <div>{review.body}</div>
-      </li>
+      <Review data={review[1]} />
     );
   });
 
   return (
-    <ul>
+    <ReviewsContainer>
       {reviews}
-    </ul>
+    </ReviewsContainer>
   );
 };
 
