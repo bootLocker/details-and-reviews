@@ -17,7 +17,7 @@ let seedFunc = () => {
 
   let seedObjects = [];
 
-  for (let i = 0; i < 1017; i++) {
+  for (let i = 0; i < 27; i++) {
     let randomAgeRangeIndex = Math.floor(Math.random() * ageRangeOptions.length);
 
     let randomImages = [];

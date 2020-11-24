@@ -1,5 +1,4 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
 import Heading from './ActionBar.jsx';
 import RatingsPanel from './ratings/RatingsPanel.jsx';
 import ControlBar from './ControlBar.jsx';
@@ -23,22 +22,40 @@ class ReviewsPanel extends React.Component {
 
   changePage(e) {
     if (e.target.value === 'prev') {
-      if (this.state.firstReviewIndex > 7) {
-        let currentReviews = this.state.reviews.slice(this.state.firstReviewIndex - 8, this.state.lastReviewIndex - 8);
-        this.setState({
-          currentReviews: currentReviews,
-          firstReviewIndex: this.state.firstReviewIndex - 8,
-          lastReviewIndex: this.state.lastReviewIndex - 8,
-        }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
+      let currentReviews = this.state.reviews.slice(this.state.firstReviewIndex - 8, this.state.lastReviewIndex - 8);
+
+      if (this.state.lastReviewIndex > 7 ) {
+        if (currentReviews.length === 7) {
+          this.setState({
+            currentReviews: currentReviews,
+            firstReviewIndex: this.state.firstReviewIndex - 8,
+            lastReviewIndex: this.state.lastReviewIndex - 8,
+          }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
+        } else {
+          this.setState({
+            currentReviews: currentReviews,
+            firstReviewIndex: this.state.firstReviewIndex - 8,
+            lastReviewIndex: this.state.lastReviewIndex - currentReviews.length - 1,
+          }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
+        }
       }
     } else {
-      if (this.state.firstReviewIndex < this.state.reviews.length - 8) {
-        let currentReviews = this.state.reviews.slice(this.state.firstReviewIndex + 8, this.state.lastReviewIndex + 8);
-        this.setState({
-          currentReviews: currentReviews,
-          firstReviewIndex: this.state.firstReviewIndex + 8,
-          lastReviewIndex: this.state.lastReviewIndex + 8,
-        }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
+      let currentReviews = this.state.reviews.slice(this.state.firstReviewIndex + 8, this.state.lastReviewIndex + 8);
+
+      if (this.state.lastReviewIndex < this.state.reviews.length - 1) {
+        if (currentReviews.length === 7) {
+          this.setState({
+            currentReviews: currentReviews,
+            firstReviewIndex: this.state.firstReviewIndex + 8,
+            lastReviewIndex: this.state.lastReviewIndex + 8,
+          }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
+        } else {
+          this.setState({
+            currentReviews: currentReviews,
+            firstReviewIndex: this.state.firstReviewIndex + 8,
+            lastReviewIndex: this.state.lastReviewIndex + currentReviews.length,
+          }, () => this.pageChangeRef.current.scrollIntoView({ behavior: 'smooth'}));
+        }
       }
     }
   }
@@ -60,11 +77,11 @@ class ReviewsPanel extends React.Component {
           overallRatings={this.props.overallRatings}
           qualityRatings={this.props.qualityRatings}
           valueRatings={this.props.valueRatings}/>
+        <a ref={this.pageChangeRef} />
         <ControlBar
           firstReviewIndex={this.state.firstReviewIndex}
           lastReviewIndex={this.state.lastReviewIndex}
           totalCount={this.state.reviews.length}/>
-        <a ref={this.pageChangeRef} />
         <div>
           <Reviews currentReviews={this.state.currentReviews}/>
         </div>
