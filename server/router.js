@@ -6,4 +6,7 @@ router.route('/reviews')
   .post(controller.post)
   .delete(controller.delete);
 
+router.route('/questions/:name')
+  .get(controller.getQuestions);
+
 module.exports = router;

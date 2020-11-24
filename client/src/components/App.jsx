@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import TabsBar from './TabsBar.jsx';
 import DetailsPanel from './details/DetailsPanel.jsx';
 import ReviewsPanel from './reviews/ReviewsPanel.jsx';
+import SizeFit from './size/SizeFit.jsx';
+import QA from './q_a/QA.jsx';
 
 const Container = styled.div`
   width: 87%;
@@ -45,7 +47,7 @@ class App extends React.Component {
     if (this.state.view === 'details') {
       return <DetailsPanel />;
     } else if (this.state.view === 'sizeAndFit') {
-      return <div>Size and Fit</div>;
+      return <SizeFit />;
     } else if (this.state.view === 'reviews') {
       return <ReviewsPanel
         reviews={this.state.reviews}
@@ -53,7 +55,7 @@ class App extends React.Component {
         qualityRatings={this.state.qualityRatings}
         valueRatings={this.state.valueRatings}/>;
     } else if (this.state.view === 'qa') {
-      return <div>Q&A</div>;
+      return <QA />;
     }
   }
 
