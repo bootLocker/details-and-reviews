@@ -4,32 +4,32 @@ import styled, { css } from 'styled-components';
 import { RiStarFill } from 'react-icons/ri';
 
 const HistogramContainer = styled.span`
-padding-top: 13px;
-padding-left: 10px;
-padding-right: 18px;
+  padding-top: 13px;
+  padding-left: 10px;
+  padding-right: 18px;
 `;
 
 const HistogramBar = styled.span`
-display: inline-flex;
-align-items: center;
-background-color: #ccc;
-height: 8px;
-width: 144px;
-margin: 0;
-border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #ccc;
+  height: 8px;
+  width: 144px;
+  margin: 0;
+  border-radius: 2px;
 
-${props => props.emphasized && css `
-  background-color: #515151;
-  width: ${props => props.width};
-  overflow: visible;
-`}
+  ${props => props.emphasized && css `
+    background-color: #515151;
+    width: ${props => props.width};
+    overflow: visible;
+  `}
 
-${props => props.block && css `
-  display: content;
-  background-color: #transparent;
-  width: 28.8px;
-  border-right: solid thin white;
-`}
+  ${props => props.block && css `
+    display: content;
+    background-color: #transparent;
+    width: 28.8px;
+    border-right: solid thin white;
+  `}
 `;
 
 let SegmentedHistogram = (props) => {
