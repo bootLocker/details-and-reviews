@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Stars from '/Users/kiwi/Hack-Reactor/Immersive/F-E-C/details-and-reviews/client/src/components/reviews/Stars.jsx';
+import Stars from '../../Stars.jsx';
 import Moment from 'react-moment';
 import { IconContext } from 'react-icons';
 import { BsDot } from 'react-icons/bs';
