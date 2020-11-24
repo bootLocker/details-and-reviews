@@ -73,13 +73,13 @@ let ContentBody = (props) => {
       <Body>
         {props.data.body}
       </Body>
-      {props.data.pros &&
+      {props.data.pros.length > 0 &&
         <Pros>
           <IconContext.Provider value={{ size: '1rem', color: props.color, style: { verticalAlign: 'middle' }}}>
             <AiFillPlusCircle /> <strong>Pros</strong> {pros}
           </IconContext.Provider>
         </Pros>}
-      {props.data.cons &&
+      {props.data.cons.length > 0 &&
         <Cons>
           <IconContext.Provider value={{ size: '1rem', color: props.color, style: { verticalAlign: 'middle' }}}>
             <AiFillMinusCircle /> <strong>Cons</strong> {cons}

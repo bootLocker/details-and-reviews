@@ -17,7 +17,6 @@ let Stars = (props) => {
     rating = rating / props.reviews.length;
   } else {
     rating = props.rating;
-    console.log(props.rating);
   }
 
   let stars = [];

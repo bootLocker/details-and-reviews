@@ -22,30 +22,19 @@ const Icon = styled.div`
   padding: 10px;
 `;
 
-class ControlBar extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentRange: this.props.currentRange,
-      totalCount: this.props.totalCount
-    };
-  }
-
-  render() {
-    return (
-      <ControlBarContainer>
-        <PageRange>
-          {this.state.currentRange[0] + 1} - {this.state.currentRange[1] + 1} of {this.state.totalCount} Reviews
-        </PageRange>
-        {/* <Icon>
-          <IconContext.Provider value={{ size: '1rem', color: '#515151', style: { verticalAlign: 'middle' }}}>
-            <BsFillQuestionCircleFill />
-          </IconContext.Provider>
-        </Icon> */}
-      </ControlBarContainer>
-    );
-  }
-}
+let ControlBar = (props) => {
+  return (
+    <ControlBarContainer>
+      <PageRange>
+        {props.firstReviewIndex + 1} - {props.lastReviewIndex + 1} of {props.totalCount} Reviews
+      </PageRange>
+      {/* <Icon>
+        <IconContext.Provider value={{ size: '1rem', color: '#515151', style: { verticalAlign: 'middle' }}}>
+          <BsFillQuestionCircleFill />
+        </IconContext.Provider>
+      </Icon> */}
+    </ControlBarContainer>
+  );
+};
 
 export default ControlBar;

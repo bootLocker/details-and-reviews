@@ -10,7 +10,7 @@ const ReviewsContainer = styled.div`
 let Reviews = (props) => {
   let reviews = props.currentReviews.map((review) => {
     return (
-      <Review data={review[1]} />
+      <Review data={review} />
     );
   });
 

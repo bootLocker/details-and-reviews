@@ -74,17 +74,17 @@ let AverageRatingPanel = (props) => {
         <RatingRow>
           <RatingLabel>Overall</RatingLabel>
           <StarsContainer><Stars reviews={props.reviews} color={'#515151'}/></StarsContainer>
-          <RatingScore>{ratings.overallRating}</RatingScore>
+          <RatingScore>{ratings.overallRating.toFixed(1)}</RatingScore>
         </RatingRow>
         <RatingRow>
           <RatingLabel>Quality of Product</RatingLabel>
           <SegmentedHistogram reviews={props.reviews} type={'qualityRating'} />
-          <RatingScore>{ratings.qualityRating}</RatingScore>
+          <RatingScore>{ratings.qualityRating.toFixed(1)}</RatingScore>
         </RatingRow>
         <RatingRow>
           <RatingLabel>Value of Product</RatingLabel>
           <SegmentedHistogram reviews={props.reviews} type={'valueRating'} />
-          <RatingScore>{ratings.valueRating}</RatingScore>
+          <RatingScore>{ratings.valueRating.toFixed(1)}</RatingScore>
         </RatingRow>
       </AverageRatings>
     </Panel>

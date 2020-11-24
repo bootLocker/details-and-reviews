@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const PaginationBarContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   background: #F7F7F7;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -16,25 +17,34 @@ const PageRange = styled.div`
   padding: 10px;
 `;
 
-class PaginationBar extends React.Component {
-  constructor(props) {
-    super(props);
+const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 4px;
+`;
 
-    this.state = {
-      currentRange: this.props.currentRange,
-      totalCount: this.props.totalCount
-    };
-  }
+const Button = styled.button`
+  height: 30px;
+  border: none;
 
-  render() {
-    return (
-      <PaginationBarContainer>
-        <PageRange>
-          {this.state.currentRange[0] + 1} - {this.state.currentRange[1] + 1} of {this.state.totalCount} Reviews
-        </PageRange>
-      </PaginationBarContainer>
-    );
+  &:focus {
+    background: #dddddd;
+    outline: 0;
   }
-}
+`;
+
+let PaginationBar = (props) => {
+  return (
+    <PaginationBarContainer>
+      <PageRange>
+        {props.firstReviewIndex + 1} - {props.lastReviewIndex + 1} of {props.totalCount} Reviews
+      </PageRange>
+      <ButtonContainer>
+        <Button value='prev' onClick={props.handleClick} >◄</Button>
+        <Button value='next' onClick={props.handleClick} >►</Button>
+      </ButtonContainer>
+    </PaginationBarContainer>
+  );
+};
 
 export default PaginationBar;
