@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProfileContainer = styled.div`
-  margin: 0;
+  width: 273px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   padding: 0;
 `;
 
@@ -14,6 +16,8 @@ const UsernameContainer = styled.div`
 
 const Username = styled.h3`
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 `;
 
 const LocationContainer = styled.div`
@@ -26,7 +30,7 @@ const Location = styled.span`
   color: #515151;
 `;
 
-let Profile = (props) => {
+let ReviewProfile = (props) => {
   return (
     <ProfileContainer>
       <UsernameContainer>
@@ -43,4 +47,4 @@ let Profile = (props) => {
   );
 };
 
-export default Profile;
+export default ReviewProfile;

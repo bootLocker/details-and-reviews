@@ -5,13 +5,20 @@ import { IconContext } from 'react-icons';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 let Stars = (props) => {
-  let rating = 0;
+  let rating;
 
-  _.each(props.reviews, (review) => {
-    rating += review.overallRating;
-  });
+  if (!props.rating) {
+    rating = 0;
 
-  rating = rating / props.reviews.length;
+    _.each(props.reviews, (review) => {
+      rating += review.overallRating;
+    });
+
+    rating = rating / props.reviews.length;
+  } else {
+    rating = props.rating;
+    console.log(props.rating);
+  }
 
   let stars = [];
 
@@ -26,7 +33,7 @@ let Stars = (props) => {
         <IconContext.Provider value={{ size: '1rem', color: props.color, style: { verticalAlign: 'middle' }}}>
           <BsStarHalf />
         </IconContext.Provider>);
-    } else if (i > rating && i > (rating + 1)) {
+    } else if (i > rating && i >= (rating + 1)) {
       stars.push(
         <IconContext.Provider value={{ size: '1rem', color: props.color, style: { verticalAlign: 'middle' }}}>
           <BsStar />

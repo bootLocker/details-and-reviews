@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BsFillQuestionCircleFill } from 'react-icons/bs';
-import { IconContext } from 'react-icons';
 
-const ControlBarContainer = styled.div`
+const PaginationBarContainer = styled.div`
   display: flex;
   background: #F7F7F7;
   margin-left: 10px;
@@ -18,11 +16,7 @@ const PageRange = styled.div`
   padding: 10px;
 `;
 
-const Icon = styled.div`
-  padding: 10px;
-`;
-
-class ControlBar extends React.Component {
+class PaginationBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -34,18 +28,13 @@ class ControlBar extends React.Component {
 
   render() {
     return (
-      <ControlBarContainer>
+      <PaginationBarContainer>
         <PageRange>
           {this.state.currentRange[0] + 1} - {this.state.currentRange[1] + 1} of {this.state.totalCount} Reviews
         </PageRange>
-        {/* <Icon>
-          <IconContext.Provider value={{ size: '1rem', color: '#515151', style: { verticalAlign: 'middle' }}}>
-            <BsFillQuestionCircleFill />
-          </IconContext.Provider>
-        </Icon> */}
-      </ControlBarContainer>
+      </PaginationBarContainer>
     );
   }
 }
 
-export default ControlBar;
+export default PaginationBar;
