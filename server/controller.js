@@ -1,4 +1,5 @@
 let Reviews = require('./db/Reviews.js');
+const db2 = require('./database/index.js');
 
 let controller = {
   get: (req, res) => {
@@ -30,6 +31,16 @@ let controller = {
         res.status(400).send(err);
       });
   },
+
+  getQuestions: (req, res) => {
+    db2.Container.findOne({ name: req.params.name })
+      .then((result) => {
+        res.status(200).json(result);
+      })
+      .catch((err) => {
+        res.status(400).send(err);
+      });
+  }
 };
 
 module.exports = controller;

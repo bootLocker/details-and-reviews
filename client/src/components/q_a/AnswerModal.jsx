@@ -1,5 +1,4 @@
-/* eslint-disable import/extensions */
-/* eslint-disable react/prop-types */
+
 import React from 'react';
 import styled from 'styled-components';
 import { MdCancel } from 'react-icons/md';
@@ -27,7 +26,7 @@ const StyledModalContainer = styled.div`
     padding: 20px;
     background: white;
     top: 80%;
-    left: 45.5%;
+    left: 42%;
     transform: translate(-50%,-50%);
     z-index: 2;
     margin: auto;
