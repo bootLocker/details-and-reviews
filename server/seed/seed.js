@@ -71,6 +71,7 @@ let seedFunc = () => {
       Reviews.create(seedObjects)
         .then(() => {
           console.log('Seeded');
+          // db.connection.close();
         })
         .catch((err) => {
           console.error(err);
