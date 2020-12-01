@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-let mongoUri = 'mongodb://localhost/reviews';
+let mongoUri = 'mongodb://database/reviews';
 mongoose.promise = global.Promise;
 
 var db = mongoose.connect(mongoUri)

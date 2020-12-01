@@ -9,13 +9,13 @@ import AnswerModal from './AnswerModal.jsx';
 const GlobalStyle = createGlobalStyle`
   html {
     scroll-behavior: smooth;
+    font-family: "Roboto", "Arial", sans-serif;
   }
 
   #info-button{
     background: none!important;
     border: none;
     padding: 0!important;
-    font-family: Roboto;
     font-size: 14px;
     color: #036ad8;
     text-decoration: none;
@@ -40,7 +40,6 @@ const StyledHeader = styled.div`
   }
 
   button {
-    font-family: Roboto;
     display: inline-block;
     background-color: #e71836;
     color: white;
@@ -232,10 +231,10 @@ class QA extends React.Component {
         ) : null}
         {requestInfo ? (
           <>
+            <div ref={this.reqRef} />
             <RequestInfo
               handleCloseRequestClick={this.handleCloseRequestClick}
             />
-            <div ref={this.reqRef} />
           </>
         ) : null}
       </>

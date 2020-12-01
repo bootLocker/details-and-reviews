@@ -12,6 +12,7 @@ const Container = styled.div`
   margin: auto;
   border: 1px solid #dddddd;
   border-width: thin;
+  font-family: "Roboto", "Arial", sans-serif;
 `;
 
 const PanelContainer = styled.div`

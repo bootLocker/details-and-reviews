@@ -1,6 +1,7 @@
 let db = require('../db/');
 let Reviews = require('../db/Reviews.js');
 let faker = require('faker');
+let mongoose = require('mongoose');
 
 let seedFunc = () => {
   let ageRangeOptions = [
@@ -71,7 +72,7 @@ let seedFunc = () => {
       Reviews.create(seedObjects)
         .then(() => {
           console.log('Seeded');
-          // db.connection.close();
+          mongoose.connection.close();
         })
         .catch((err) => {
           console.error(err);
@@ -119,8 +120,8 @@ const createAnswer = () => {
 const generateQuestions = () => {
   const questions = [];
   const questionProbability = Math.ceil(Math.random() * 10);
-  if (questionProbability >= 5) {
-    const numberOfQuestions = Math.floor(Math.random() * 30);
+  if (questionProbability >= 1) {
+    const numberOfQuestions = Math.floor(Math.random() * 100);
     for (let i = 0; i < numberOfQuestions; i += 1) {
       const questionObject = db.Question(createQuestion());
       questions.push(questionObject);

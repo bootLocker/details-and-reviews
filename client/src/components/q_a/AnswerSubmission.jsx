@@ -41,7 +41,6 @@ const StyledInfoContainer = styled.div`
   }
 
   textarea{
-    font-family: Arial;
     font-size: 15px;
     font-weight: 400;
     display: flex;
@@ -110,7 +109,6 @@ const StyledInfoContainer = styled.div`
   }
 
   button {
-    font-family: Roboto;
     display: inline-block;
     background-color: #e71836;
     color: white;

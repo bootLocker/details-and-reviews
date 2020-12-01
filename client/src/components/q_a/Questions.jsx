@@ -63,7 +63,6 @@ const AnswerButtonContainer = styled.div`
   margin-top: 30px;
 
   button {
-    font-family: Roboto;
     appearance: none;
     background-color: rgb(247, 247, 247);
     border: none;

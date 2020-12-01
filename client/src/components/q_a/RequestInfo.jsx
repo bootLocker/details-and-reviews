@@ -113,7 +113,6 @@ const StyledInfoContainer = styled.div`
   }
 
   button {
-    font-family: Roboto;
     display: inline-block;
     background-color: #e71836;
     color: white;
