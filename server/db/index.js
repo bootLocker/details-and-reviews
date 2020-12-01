@@ -7,6 +7,9 @@ var db = mongoose.connect(mongoUri)
     console.log('Database connected');
   });
 
+// Q&A Schema Below
+// Arrangement: (Nested Schemas) Container (per Shoe) -> Questions -> Answers
+
 const answerSchema = mongoose.Schema({
   nickName: String,
   date: Date,

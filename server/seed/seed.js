@@ -3,6 +3,7 @@ let Reviews = require('../db/Reviews.js');
 let faker = require('faker');
 let mongoose = require('mongoose');
 
+// Beginning of Kiwi's review seed function
 let seedFunc = () => {
   let ageRangeOptions = [
     '17 or under',
@@ -83,6 +84,7 @@ let seedFunc = () => {
     });
 };
 
+// Beginning of Phillip's Q&A seed functions
 const shoes = [
   'Nike KD 13',
   'Nike Air Vapormax Plus',
